@@ -17,5 +17,10 @@ declare module 'styled-components' {
       unselect: string
       repo: string
     }
+    button: {
+      background: string
+      backgroundHover: string
+      font: string
+    }
   }
 }

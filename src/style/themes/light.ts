@@ -13,5 +13,10 @@ export default {
     select: '#00000025',
     unselect: '#00000025',
     repo: '#00000025'
+  },
+  button: {
+    background: '#0473f5',
+    backgroundHover: '#024ca1',
+    font: '#fff'
   }
 }
