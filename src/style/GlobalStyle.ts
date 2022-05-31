@@ -14,5 +14,6 @@ export const GlobalStyle = createGlobalStyle`
 body{
     min-height: 100vh;
     width: 100%;
+    padding: 1rem;
 }
 `
