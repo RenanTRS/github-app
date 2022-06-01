@@ -1,11 +1,11 @@
 import { createContext, ReactNode, useState } from 'react'
 import light from '../style/themes/light'
 import dark from '../style/themes/dark'
-
-type Theme = typeof light
+import { usePersistedData } from '../hooks/usePersistedData'
+import { DefaultTheme } from 'styled-components'
 
 interface Toggle {
-  theme: Theme
+  theme: DefaultTheme
   toggleTheme(): void
 }
 interface Provider {
@@ -15,7 +15,7 @@ interface Provider {
 export const ToggleContext = createContext({} as Toggle)
 
 export const ToggleProvider = ({ children }: Provider) => {
-  const [theme, setTheme] = useState(light)
+  const [theme, setTheme] = usePersistedData<DefaultTheme>('theme', light)
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light)
   }
