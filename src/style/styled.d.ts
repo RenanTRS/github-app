@@ -7,6 +7,7 @@ declare module 'styled-components' {
       full: string
       repo: string
       repoHover: string
+      input: string
     }
     color: {
       font: string
@@ -16,11 +17,22 @@ declare module 'styled-components' {
       select: string
       unselect: string
       repo: string
+      input: string
     }
     button: {
       background: string
       backgroundHover: string
       font: string
+    }
+    switchToggle: {
+      checked: {
+        color: string
+        handlerColor: string
+      }
+      unChecked: {
+        color: string
+        handlerColor: string
+      }
     }
   }
 }
