@@ -14,7 +14,7 @@ export default {
     select: '#00000046',
     unselect: '#00000047',
     repo: '#00000051',
-    input: '#00000051'
+    input: '#5c5c5c'
   },
   button: {
     background: '#0473f5',
