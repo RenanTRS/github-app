@@ -1,9 +1,9 @@
-import { useContext } from 'react'
+import { memo, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { ToggleContext } from '../../context/ToggleProvider'
 import Switch from 'react-switch'
 
-export const SwitchToggle = () => {
+export const SwitchToggle = memo(() => {
   const { switchToggle, title } = useContext(ThemeContext)
   const { toggleTheme } = useContext(ToggleContext)
 
@@ -22,4 +22,4 @@ export const SwitchToggle = () => {
       onColor={switchToggle.checked.color}
     />
   )
-}
+})

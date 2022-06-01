@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import styled from 'styled-components'
 
-export const Button = styled.button`
+export const Button = memo(styled.button`
   background-color: ${(props) => props.theme.button.background};
   color: ${(props) => props.theme.button.font};
 
@@ -17,4 +18,4 @@ export const Button = styled.button`
   :hover {
     background-color: ${(props) => props.theme.button.backgroundHover};
   }
-`
+`)
