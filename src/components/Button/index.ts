@@ -5,7 +5,7 @@ export const Button = styled.button`
   color: ${(props) => props.theme.button.font};
   font-weight: bold;
 
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 
   border: none;
 
