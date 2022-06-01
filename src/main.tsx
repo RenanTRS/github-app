@@ -1,17 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ThemeProvider } from 'styled-components'
-import light from './style/themes/light'
 import App from './App'
+import { ToggleProvider } from './context/ToggleProvider'
 import { Reset } from './style/Reset'
-import { GlobalStyle } from './style/GlobalStyle'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider theme={light}>
+    <ToggleProvider>
       <Reset />
-      <GlobalStyle />
       <App />
-    </ThemeProvider>
+    </ToggleProvider>
   </React.StrictMode>
 )
