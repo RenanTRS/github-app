@@ -9,7 +9,7 @@ export const SwitchToggle = () => {
 
   return (
     <Switch
-      onChange={() => toggleTheme}
+      onChange={() => toggleTheme()}
       checked={title === 'dark'}
       checkedIcon={false}
       uncheckedIcon={false}
