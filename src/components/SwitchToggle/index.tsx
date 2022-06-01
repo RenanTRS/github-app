@@ -1,14 +1,16 @@
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-
+import { ToggleContext } from '../../context/ToggleProvider'
 import Switch from 'react-switch'
 
 export const SwitchToggle = () => {
-  const { switchToggle } = useContext(ThemeContext)
+  const { switchToggle, title } = useContext(ThemeContext)
+  const { toggleTheme } = useContext(ToggleContext)
+
   return (
     <Switch
-      onChange={() => {}}
-      checked={false}
+      onChange={() => toggleTheme}
+      checked={title === 'dark'}
       checkedIcon={false}
       uncheckedIcon={false}
       height={23}
