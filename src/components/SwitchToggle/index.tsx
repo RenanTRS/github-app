@@ -1,6 +1,6 @@
 import { memo, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import { ToggleContext } from '../../context/ToggleProvider'
+import { ToggleContext } from 'context/ToggleProvider'
 import Switch from 'react-switch'
 
 export const SwitchToggle = memo(() => {

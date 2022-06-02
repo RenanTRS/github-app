@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from 'react'
-import light from '../style/themes/light'
-import dark from '../style/themes/dark'
-import { usePersistedData } from '../hooks/usePersistedData'
+import light from 'style/themes/light'
+import dark from 'style/themes/dark'
+import { usePersistedData } from 'hooks/usePersistedData'
 import { DefaultTheme } from 'styled-components'
 
 interface Toggle {
