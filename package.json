@@ -9,10 +9,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-switch": "^6.0.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "vite-tsconfig-paths": "^3.5.0"
   },
   "devDependencies": {
     "@swc/core": "^1.2.196",
