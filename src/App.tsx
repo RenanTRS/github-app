@@ -3,14 +3,17 @@ import { ToggleContext } from './context/ToggleProvider'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from './style/GlobalStyle'
 import { Container } from './components/Container'
+import { GitProvider } from 'context/GitProvider'
 
 function App() {
   const { theme } = useContext(ToggleContext)
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Container />
+      <GitProvider>
+        <GlobalStyle />
+        <Container />
+      </GitProvider>
     </ThemeProvider>
   )
 }
