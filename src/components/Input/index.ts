@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const Input = styled.input`
   flex: 2;
 
+  min-width: 3rem;
+
   background-color: ${(props) => props.theme.background.input};
   color: ${(props) => props.theme.color.font};
 
