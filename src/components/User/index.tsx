@@ -1,18 +1,34 @@
 import { memo, useState } from 'react'
-import { Repositories } from './Respositories'
+import { Repositories } from './Repositories'
 import { Starred } from './Starred'
+import { RepoShow, StarShow, ShowRepo, UserStyle } from './style'
 import { UserHeader } from './UserHeader'
+import { UserType } from 'types/UserType'
+import { ReposType } from 'types/ReposType'
 
-export const User = memo(() => {
+interface UserProps {
+  user: UserType
+  repos: ReposType[]
+  starreds: ReposType[]
+}
+
+export const User = memo(({ user, repos, starreds }: UserProps) => {
   const [show, setShow] = useState<boolean>(true)
   return (
-    <>
-      <UserHeader />
-      <div>
-        <span onClick={() => setShow(!show)}>Repositories</span>
-        <span onClick={() => setShow(!show)}>Starreds</span>
-      </div>
-      {show ? <Repositories /> : <Starred />}
-    </>
+    <UserStyle>
+      <UserHeader user={user} />
+
+      <ShowRepo>
+        <RepoShow shad={show} onClick={() => setShow(true)}>
+          Repositories
+        </RepoShow>
+
+        <StarShow shad={show} onClick={() => setShow(false)}>
+          Starreds
+        </StarShow>
+      </ShowRepo>
+
+      {show ? <Repositories repos={repos} /> : <Starred starreds={starreds} />}
+    </UserStyle>
   )
 })
