@@ -1,11 +1,7 @@
-import axios from 'axios'
-
-const gitclient = axios.create({
-  baseURL: 'https://api.github.com/users/'
-})
+import { gitClient } from 'services/gitClient'
 
 export const useFetch = async (query: string) => {
-  const response = await gitclient.get(query)
+  const response = await gitClient.get(query)
 
   return response.data
 }
