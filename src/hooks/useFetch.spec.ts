@@ -7,6 +7,7 @@ const apiUser = 'https://api.github.com/users/renantrs'
 const apiRepo = 'https://api.github.com/users/renantrs/repos'
 const apiStar = 'https://api.github.com/users/renantrs/starred'
 
+//fake server
 const server = setupServer(
   rest.get(apiUser, (req, res, ctx) => {
     return res(ctx.json(mockUser))
@@ -19,9 +20,9 @@ const server = setupServer(
   })
 )
 
-beforeAll(() => server.listen()) //Escuta o servidor
-afterEach(() => server.resetHandlers()) //Limpa o servidor
-afterAll(() => server.close()) //Fecha o servidor
+beforeAll(() => server.listen()) //listen to server
+afterEach(() => server.resetHandlers()) //clean the server
+afterAll(() => server.close()) //close the server
 
 it('should transform json response into object', async () => {
   const data = await useFetch('renantrs')
