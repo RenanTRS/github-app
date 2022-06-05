@@ -21,6 +21,7 @@ export const GitProvider = ({ children }: ProviderProp) => {
   const [starreds, setStarreds] = useState<ReposType[]>([])
 
   const getApi = async (user: string) => {
+    //get all data
     const data = await useFetch(user)
     setUser(data)
 
