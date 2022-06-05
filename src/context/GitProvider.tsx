@@ -1,5 +1,7 @@
 import { useFetch } from 'hooks/useFetch'
 import { createContext, ReactNode, useState } from 'react'
+import { ReposType } from 'types/ReposType'
+import { UserType } from 'types/UserType'
 
 interface ProviderProp {
   children: ReactNode
@@ -9,25 +11,6 @@ interface GitType {
   getApi(user: string): void
   repos?: ReposType[]
   starreds?: ReposType[]
-}
-type UserType = {
-  avatar_url: string
-  name: string
-  login: string
-  location: string
-  followers: number
-  following: number
-  public_repos: number
-}
-type ReposType = {
-  name: string
-  html_url: string
-  description: string
-  forks: number
-  open_issues: number
-  homepage: string
-  topics: string[]
-  stargazers_count: number
 }
 
 export const GitContext = createContext({} as GitType)
