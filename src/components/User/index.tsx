@@ -20,7 +20,7 @@ export const User = memo(({ user, repos, starreds }: UserProps) => {
 
       <ShowRepo>
         <RepoShow shad={show} onClick={() => setShow(true)}>
-          Repositories
+          Repositórios
         </RepoShow>
 
         <StarShow shad={show} onClick={() => setShow(false)}>

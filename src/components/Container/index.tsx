@@ -1,9 +1,10 @@
-import { Main, Section } from './style'
+import { Main, NotUser, Section } from './style'
 import { Header } from '../Header'
 import { useCheckStatusApi } from 'hooks/useCheckStatusApi'
 import { useState, useContext } from 'react'
 import { User } from 'components/User'
 import { GitContext } from 'context/GitProvider'
+import { XCircle } from 'phosphor-react'
 
 import imgBg from 'assets/img/gitHub-bg.svg'
 
@@ -37,7 +38,12 @@ export const Container = () => {
             {status ? (
               <User user={user!} repos={repos!} starreds={starreds!} />
             ) : (
-              <p>Não existe</p>
+              <>
+                <NotUser>
+                  <XCircle weight="bold" />
+                  Usário não encontrado
+                </NotUser>
+              </>
             )}
           </>
         )}

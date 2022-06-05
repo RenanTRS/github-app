@@ -18,4 +18,8 @@ export const Button = memo(styled.button`
   :hover {
     background-color: ${(props) => props.theme.button.backgroundHover};
   }
+
+  @media (max-width: 260px) {
+    flex: 1;
+  }
 `)

@@ -50,10 +50,10 @@ export const InfoUser = styled.div`
     align-items: center;
     gap: 0.5rem;
 
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
 
-    /* svg {
-      width: 5rem;
-    } */
+    @media (max-width: 260px) {
+      font-size: 1.4rem;
+    }
   }
 `

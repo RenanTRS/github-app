@@ -1,18 +1,20 @@
 import styled from 'styled-components'
 
 export const Repos = styled.div`
-  margin-top: 1rem;
+  margin-top: 2rem;
   width: 100%;
+  max-width: 133rem;
 `
 export const WrapperRepos = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 `
 
 export const Repo = styled.li`
   width: 100%;
-  max-width: 50rem;
+  max-width: 38rem;
   padding: 1rem;
 
   background-color: ${(props) => props.theme.background.repo};
@@ -45,6 +47,7 @@ export const Title = styled.h3`
 
 export const Description = styled.span`
   font-size: 1.5rem;
+  line-height: 2rem;
 `
 export const ValuesItens = styled.div`
   display: flex;
@@ -64,8 +67,21 @@ export const Topics = styled.ul`
   gap: 1rem;
 
   width: 100%;
+  padding-bottom: 1rem;
 
   overflow-x: scroll;
+
+  @media (min-width: 768px) {
+    padding: 0.5rem;
+    ::-webkit-scrollbar {
+      height: 0.3rem;
+      width: 100%;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: ${(props) => props.theme.background.topic};
+      border-radius: 0.5rem;
+    }
+  }
 `
 
 export const Topic = styled.li`

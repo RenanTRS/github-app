@@ -19,22 +19,22 @@ export const UserHeader = ({ user }: UserHeraderProps) => {
 
       <InfoUser>
         <span role="infoUser" title="Seguidores">
-          <UsersThree size={20} />
+          <UsersThree weight="bold" />
           {user?.followers}
         </span>
 
         <span role="infoUser" title="Seguindo">
-          <User size={20} />
+          <User weight="bold" />
           {user?.following}
         </span>
 
         <span role="infoUser" title="Repositórios">
-          <BookBookmark size={20} />
+          <BookBookmark weight="bold" />
           {user?.public_repos}
         </span>
 
         <span role="infoUser" title="Localidade">
-          <MapPinLine size={20} />
+          <MapPinLine weight="bold" />
           {user?.location}
         </span>
       </InfoUser>
