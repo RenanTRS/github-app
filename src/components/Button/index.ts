@@ -8,6 +8,7 @@ export const Button = memo(styled.button`
   font-weight: bold;
   font-size: 1.5rem;
 
+  height: 3rem;
   padding: 0.5rem 1rem;
 
   border: none;

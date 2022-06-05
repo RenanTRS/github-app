@@ -14,12 +14,12 @@ export const Input = styled.input`
   border-radius: 0.5rem;
 
   padding-left: 1rem;
+  height: 3rem;
 
   @media (max-width: 260px) {
     flex: initial;
     min-width: initial;
 
     width: 100%;
-    height: 3rem;
   }
 `
