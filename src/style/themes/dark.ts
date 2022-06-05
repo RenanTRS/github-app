@@ -4,17 +4,21 @@ export default {
     full: '#333',
     repo: '#474747',
     repoHover: '#5c5c5c',
-    input: '#333'
+    input: '#333',
+    showRepo: '#686868',
+    topic: '#0473F5'
   },
   color: {
     font: '#fff',
-    link: '#0473f5'
+    link: '#0473f5',
+    topic: '#fff'
   },
   border: {
     select: '#00000046',
     unselect: '#00000047',
     repo: '#00000051',
-    input: '#5c5c5c'
+    input: '#5c5c5c',
+    img: '#5c5c5c'
   },
   button: {
     background: '#0473f5',

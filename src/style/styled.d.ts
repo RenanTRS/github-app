@@ -8,16 +8,20 @@ declare module 'styled-components' {
       repo: string
       repoHover: string
       input: string
+      showRepo: string
+      topic: string
     }
     color: {
       font: string
       link: string
+      topic: string
     }
     border: {
       select: string
       unselect: string
       repo: string
       input: string
+      img: string
     }
     button: {
       background: string
