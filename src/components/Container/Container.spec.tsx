@@ -11,6 +11,7 @@ const apiRepo = 'https://api.github.com/users/renantrs/repos'
 const apiStar = 'https://api.github.com/users/renantrs/starred'
 
 const server = setupServer(
+  //Fake server
   rest.get(apiUser, (req, res, ctx) => {
     return res(ctx.json(mockUser))
   }),
@@ -22,9 +23,9 @@ const server = setupServer(
   })
 )
 
-beforeAll(() => server.listen()) //Escuta o servidor
-afterEach(() => server.resetHandlers()) //Limpa o servidor
-afterAll(() => server.close()) //Fecha o servidor
+beforeAll(() => server.listen()) //listen to server
+afterEach(() => server.resetHandlers()) //clean server
+afterAll(() => server.close()) //close server
 
 const MockProvider = () => {
   return (
