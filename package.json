@@ -9,6 +9,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@radix-ui/react-switch": "^0.1.5",
+    "@stitches/react": "^1.2.8",
     "axios": "^0.27.2",
     "phosphor-react": "^1.4.1",
     "react": "^18.0.0",
