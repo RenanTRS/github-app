@@ -1,21 +1,12 @@
-import { gitHubClient } from 'service/gitHubClient'
+import { gitClient } from 'services/gitClient'
 
 export const useCheckStatusApi = async (value: string) => {
-  let status = 0
+  let isExist = true
+  const api = `https://api.github.com/users/${value}`
 
-  try {
-    const response = await gitHubClient.get(value)
+  const response = await gitClient.get(api).catch(() => {
+    isExist = false
+  })
 
-    status = response.status
-
-    return { status }
-  } catch {
-    status = 404
-
-    if (value === '') {
-      status = 0
-    }
-
-    return { status }
-  }
+  return { isExist }
 }
