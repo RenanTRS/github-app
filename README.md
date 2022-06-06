@@ -5,8 +5,6 @@
 <h1 align="center">GitHub App</h1>
 <h4 align="center">This project is my third bootcamp spread challenge.</h4>
 
-<p align="center">⚠️ under development!</p>
-
 <p align="center">
   <img src="https://img.shields.io/github/license/renantrs/github-app" alt="GitHub License" />
   <img src="https://img.shields.io/github/languages/top/renantrs/github-app" alt="GitHub top language" />
@@ -14,8 +12,9 @@
 </p>
 
 <p align="center">
-    No image
-    <img src="" alt=""/>
+    <img src="./design/gifs/watch.gif" alt="Demo" width="25%" />
+    <img src="./design/gifs/mobile.gif" alt="Demo" width="30%" />
+    <img src="./design/gifs/desktop.gif" alt="Demo" />
 </p>
 
 ## About this project
@@ -31,7 +30,7 @@ To clone and run this project, you'll need **[Git](https://git-scm.com)**, **[no
 $ git clone https://github.com/RenanTRS/github-app.git
 
 #Go into the repository
-$ cd projectName
+$ cd github-app
 
 #Install dependencies
 $ yarn
@@ -54,6 +53,7 @@ $ yarn test
 - [MSW](https://mswjs.io/)
 - [EsLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
+- [Radix Switch](https://www.radix-ui.com/docs/primitives/components/switch)
 - [Phostphor Icons](https://phosphoricons.com/)
 
 ## Contact
