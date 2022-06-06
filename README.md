@@ -24,7 +24,7 @@ This project is my third bootcamp **spread** challenge.
 
 ## How to use
 
-To clone and run this project, you'll need **[Git](https://git-scm.com)**, **[node v]()** or higher + **[yarn v](https://yarnpkg.com)** or higher installed on your computer. From your command line:
+To clone and run this project, you'll need **[Git](https://git-scm.com)**, **[node v14.19.3]()** or higher + **[yarn v1.22.15](https://yarnpkg.com)** or higher installed on your computer. From your command line:
 
 ```bash
 #Clone this repository
