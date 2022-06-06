@@ -1,15 +1,26 @@
 import styled from 'styled-components'
 
 export const Repos = styled.div`
+  display: flex;
+  justify-content: center;
+
   margin-top: 2rem;
+
   width: 100%;
   max-width: 133rem;
 `
 export const WrapperRepos = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `
 
 export const Repo = styled.li`
