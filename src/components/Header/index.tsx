@@ -2,22 +2,28 @@ import { Wrapper } from './style'
 import { Input } from '../Input'
 import { Button } from '../Button'
 import { SwitchToggle } from '../SwitchToggle'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 
 interface HeaderProps {
-  onclick(value: string): void
+  onsubmit(value: string): void
 }
-export const Header = ({ onclick }: HeaderProps) => {
+export const Header = ({ onsubmit }: HeaderProps) => {
   const [value, setValue] = useState<string>('')
 
+  const handlerSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    onsubmit(value)
+  }
   return (
     <Wrapper>
-      <Input
-        value={value!}
-        onChange={(event) => setValue(event.target.value)}
-        placeholder="Digite o username"
-      />
-      <Button onClick={() => onclick(value)}>Buscar</Button>
+      <form onSubmit={(event) => handlerSubmit(event)}>
+        <Input
+          value={value!}
+          onChange={(event) => setValue(event.target.value)}
+          placeholder="Digite o username"
+        />
+        <Button type="submit">Buscar</Button>
+      </form>
       <SwitchToggle />
     </Wrapper>
   )

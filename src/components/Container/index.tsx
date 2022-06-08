@@ -28,7 +28,7 @@ export const Container = () => {
 
   return (
     <Main>
-      <Header onclick={getData} />
+      <Header onsubmit={getData} />
 
       <Section image={imgBg}>
         {initial ? (
