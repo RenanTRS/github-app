@@ -4,6 +4,7 @@ import { ToggleContext } from 'context/ToggleProvider'
 
 import { styled } from '@stitches/react'
 import * as SwitchPrimitive from '@radix-ui/react-switch'
+import { SwitchContainer } from './style'
 
 export const SwitchToggle = memo(() => {
   const { title, switchToggle } = useContext(ThemeContext)
@@ -11,8 +12,6 @@ export const SwitchToggle = memo(() => {
 
   const Switch = styled(SwitchPrimitive.Root, {
     all: 'unset',
-    width: 40,
-    height: 24,
     backgroundColor: `${switchToggle.unChecked.color}`,
     borderRadius: '9999px',
     position: 'relative',
@@ -25,8 +24,6 @@ export const SwitchToggle = memo(() => {
 
   const Thumb = styled(SwitchPrimitive.Thumb, {
     display: 'block',
-    width: 20,
-    height: 20,
     backgroundColor: `${switchToggle.unChecked.handlerColor}`,
     borderRadius: '9999px',
     transition: 'transform 100ms',
@@ -38,10 +35,10 @@ export const SwitchToggle = memo(() => {
   })
 
   return (
-    <>
+    <SwitchContainer>
       <Switch onCheckedChange={() => toggleTheme()} checked={title === 'dark'}>
         <Thumb />
       </Switch>
-    </>
+    </SwitchContainer>
   )
 })
