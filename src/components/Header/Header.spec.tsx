@@ -8,7 +8,7 @@ describe('Header Component', () => {
   const MockThemeProvider = () => {
     return (
       <ThemeProvider theme={light}>
-        <Header onclick={callback} />
+        <Header onsubmit={callback} />
       </ThemeProvider>
     )
   }
