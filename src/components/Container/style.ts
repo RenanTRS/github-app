@@ -16,6 +16,10 @@ export const Section = styled.section<StyleProp>`
   background-size: 30rem;
 
   margin-top: 3rem;
+
+  @media (max-width: 260px) {
+    margin-top: 5rem;
+  }
 `
 export const NotUser = styled.span`
   display: flex;

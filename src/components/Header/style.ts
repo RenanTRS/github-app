@@ -18,8 +18,16 @@ export const Wrapper = styled.header`
   left: auto;
   right: auto;
 
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
+  }
+
   @media (max-width: 260px) {
     flex-wrap: wrap;
+    gap: 1rem;
 
     position: initial;
   }
