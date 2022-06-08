@@ -8,17 +8,15 @@ export const Wrapper = styled.header`
   background-color: ${(props) => props.theme.background.full};
 
   height: 5rem;
+  width: 100%;
+  max-width: 140rem;
 
-  padding: 1rem 0;
+  padding: 1rem;
 
   position: fixed;
   top: 0;
-  left: 1rem;
-  right: 1rem;
-
-  /* div {
-    align-self: center;
-  } */
+  left: auto;
+  right: auto;
 
   @media (max-width: 260px) {
     flex-wrap: wrap;
