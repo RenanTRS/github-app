@@ -1,48 +1,42 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
+import ResizeObserver from 'resize-observer-polyfill'
+import { store } from '../../store'
 import { Header } from '.'
-import { ThemeProvider } from 'styled-components'
-import light from 'style/themes/light'
+import { Provider } from 'react-redux'
 
-describe('Header Component', () => {
-  const callback = jest.fn()
-  const MockThemeProvider = () => {
+describe('Header component', () => {
+  window.ResizeObserver = ResizeObserver
+
+  const MockProvider = () => {
     return (
-      <ThemeProvider theme={light}>
-        <Header onsubmit={callback} />
-      </ThemeProvider>
+      <Provider store={store}>
+        <Header theme="dark" />
+      </Provider>
     )
   }
-  describe('Input', () => {
-    it('should render a input', () => {
-      render(<MockThemeProvider />)
 
-      const inputElement = screen.getByRole('textbox')
-      expect(inputElement).toBeInTheDocument()
-    })
-    it('should type into input', () => {
-      render(<MockThemeProvider />)
+  describe('Title', () => {
+    it('should be able to render the title', () => {
+      render(<MockProvider />)
 
-      const inputElement = screen.getByRole('textbox') as HTMLInputElement
-      fireEvent.change(inputElement, { target: { value: 'something' } })
-      expect(inputElement.value).toBe('something')
-      expect(inputElement.value).not.toBe('SomeThing')
+      const isTitleVisible = screen.getByText('GitHub-App')
+      expect(isTitleVisible).toBeInTheDocument()
     })
   })
 
-  describe('Button', () => {
-    it('should render a button', () => {
-      render(<MockThemeProvider />)
+  describe('Input', () => {
+    it('should be able to render the input', () => {
+      render(<MockProvider />)
 
-      const buttonElement = screen.getByRole('button')
-      expect(buttonElement).toBeInTheDocument()
+      const isInputVisible = screen.getByRole('textbox') as HTMLInputElement
+      expect(isInputVisible).toBeInTheDocument()
     })
-    it('should call a function', () => {
-      render(<MockThemeProvider />)
+    it('should be able to type on the input', () => {
+      render(<MockProvider />)
 
-      const buttonElement = screen.getByRole('button')
-      fireEvent.click(buttonElement)
-
-      expect(callback).toBeCalledTimes(1)
+      const input = screen.getByRole('textbox') as HTMLInputElement
+      fireEvent.change(input, { target: { value: 'someone' } })
+      expect(input.value).toEqual('someone')
     })
   })
 })

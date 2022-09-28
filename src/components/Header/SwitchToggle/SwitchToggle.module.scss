@@ -1,0 +1,18 @@
+.switch {
+    &[data-state="unchecked"] {
+        background: var(--gray-linear);
+    }
+    &[data-state="checked"] {
+        background: var(--blue-linear);
+    }
+    &[data-theme="dark"]{
+        &:focus {
+            box-shadow: 0 0 0 3px var(--white);
+        }
+    }
+    &[data-theme="light"]{
+        &:focus {
+            box-shadow: 0 0 0 3px var(--black);
+        }
+    }
+}

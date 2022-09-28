@@ -1,0 +1,119 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    
+    width: 100%;
+
+    .title_header {
+        display: flex;
+        align-items: center;
+        gap: var(--h1-gap);
+
+        &__img {
+            width: 45px;
+            height: 45px;
+
+            @media screen and (min-width: 744px){
+                width: 63px;
+                height: 63px;
+            }
+        }
+
+        &__title {
+            font-size: var(--h1-fontSize);
+            font-weight: bold;
+            &[data-theme="dark"]{
+                color: var(--white)
+            }
+            &[data-theme="light"]{
+                color: var(--black)
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+
+        width: 100%;
+
+        @media screen and (min-width: 500px){
+            flex-wrap: nowrap;
+        }
+
+        &_input {
+            background: transparent;
+
+            font-weight: bold;
+            
+            border: 1px solid var(--border-input);
+            border-radius: 8px;
+            
+            height: var(--inputHeight);
+            width: 100%;
+
+            padding-left: 15px;
+
+            &[data-theme="dark"]{
+                color: var(--white);
+                
+                &:focus {
+                    outline: none;
+                    border: 2px solid var(--white);
+                }
+            }
+            &[data-theme="light"]{
+                color: var(--black);
+
+                &:focus {
+                    outline: none;
+                    border: 2px solid var(--black);
+                }
+            }
+        }
+
+        &_actions {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+
+            @media screen and (min-width: 500px){
+                width: 34%;
+            }
+        }
+
+        &_button {
+            background: var(--blue-linear);
+            color: var(--white);
+            font-size: var(--fontButton);
+            font-weight: bold;
+
+            max-width: var(--button-maxwidth);
+            min-width: var(--button-minwidth);
+            flex: 1;
+            height: var(--button-height);
+
+            border: none;
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+                &[data-theme="dark"]{
+                    border: 2px solid var(--white);
+                }
+                &[data-theme="light"]{
+                    border: 2px solid var(--black);
+                }
+            }
+        }
+    }
+}
