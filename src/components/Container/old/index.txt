@@ -1,4 +1,4 @@
-import { Main, NotUser, Section } from './style'
+/* import { Main, NotUser, Section } from './style'
 import { Header } from '../Header'
 import { useCheckStatusApi } from 'hooks/useCheckStatusApi'
 import { useState, useContext } from 'react'
@@ -51,3 +51,4 @@ export const Container = () => {
     </Main>
   )
 }
+ */
