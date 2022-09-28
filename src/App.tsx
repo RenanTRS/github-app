@@ -1,20 +1,14 @@
-import { useContext } from 'react'
-import { ToggleContext } from './context/ToggleProvider'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from './style/GlobalStyle'
-import { Container } from './components/Container'
-import { GitProvider } from 'context/GitProvider'
+import { Container } from 'components/Container'
+import { Header } from 'components/Header'
+import { useGetTheme } from 'hooks/useGetTheme'
 
 function App() {
-  const { theme } = useContext(ToggleContext)
+  const theme = useGetTheme()
 
   return (
-    <ThemeProvider theme={theme}>
-      <GitProvider>
-        <GlobalStyle />
-        <Container />
-      </GitProvider>
-    </ThemeProvider>
+    <Container theme={theme}>
+      <Header theme={theme} />
+    </Container>
   )
 }
 

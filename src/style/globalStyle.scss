@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --background-dark: #333;
+    --background-light: #fff;
+    --blue-linear: linear-gradient(94.79deg, #0D3EA3 3.9%, rgba(44, 110, 247, 0.84) 96.1%);
+    --gray-linear: linear-gradient(90deg, #FFFFFF 0%, #C1C1C1 100%);
+    --border-input: #5C5C5C;
+    --inputHeight: 2.5rem;
+    
+    --white: #fff;
+    --black: #000;
+    --h1-fontSize: 2.375rem;
+    --h1-gap: 0.59rem;
+    
+    --fontButton: 1.063rem;
+    --button-height: 2.25rem;
+    --button-maxwidth: 12.188rem;
+    //--button-minwidth: 6.25rem
+
+    @media screen and (max-width: 315px) {
+        --h1-fontSize: clamp(1rem, 10vw, 2.188rem);
+    }
+    @media screen and (min-width: 500px){
+        --button-maxwidth: 4.5rem;
+        --button-minwidth: 4.563rem;
+    }
+    @media screen and (min-width:744px) {
+        --h1-fontSize: 3.313rem;
+        --h1-gap: 0.821rem;
+
+        --inputHeight: 3.063rem;
+        
+        --fontButton: 1.313rem;
+        --button-height: 2.813rem;
+        --button-maxwidth: 15.234rem;
+    }
+}
+
+.dark {
+    background: var(--background-dark);
+}
