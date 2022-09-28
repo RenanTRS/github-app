@@ -1,7 +1,7 @@
 import { Wrapper } from './style'
-import { Input } from '../../Input'
-import { Button } from '../../Button/old'
-import { SwitchToggle } from '../../SwitchToggle'
+import { Input } from '../../old/Input'
+import { Button } from '../../old/Button/old'
+import { SwitchToggle } from '../../old/SwitchToggle'
 import { FormEvent, useState } from 'react'
 
 interface HeaderProps {
