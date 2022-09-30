@@ -1,32 +1,17 @@
-import { IPositionY } from './../types/index'
+import { HeaderVariantsProps } from '../types'
 
-interface VariantProps {
-  positionY: IPositionY
-}
-export const HeaderVariants = ({ positionY }: VariantProps) => {
-  const revealVariant = {
+export const HeaderVariants = ({ show }: HeaderVariantsProps) => {
+  const headerVariants = {
     hidden: {
-      y: 60,
-      opacity: 0
+      y: -100
     },
     visible: {
-      y: positionY.y,
-      opacity: 1,
+      y: show,
       transition: {
         duration: 1,
-        delay: positionY.delayHeader
+        delay: 0.5
       }
     }
   }
-
-  const titleVariant = {
-    visible: {
-      opacity: positionY.titleOpacity,
-      transition: {
-        duration: 1
-      }
-    }
-  }
-
-  return { revealVariant, titleVariant }
+  return { headerVariants }
 }
