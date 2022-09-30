@@ -1,9 +1,18 @@
 .switch {
+    &__thumb{
+        width: 27px;
+        height: 27px;
+    }
+
     &[data-state="unchecked"] {
-        background: var(--gray-linear);
+        background: gray;
+        min-width: 63px;
+        min-height: 31px;
     }
     &[data-state="checked"] {
         background: var(--blue-linear);
+        min-width: 63px;
+        min-height: 31px;
     }
     &[data-theme="dark"]{
         &:focus {

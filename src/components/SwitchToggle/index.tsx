@@ -1,15 +1,18 @@
 import style from './SwitchToggle.module.scss'
 
-import { changeTheme } from '../../../store/reducer/themeReducer'
+import { changeTheme } from '../../store/reducer/themeReducer'
 import { useDispatch } from 'react-redux'
 import { useGetTheme } from 'hooks/useGetTheme'
 import { StyledSwitch, StyledThumb } from './Switch.style'
 
-// Exports
 const Switch = StyledSwitch
 const SwitchThumb = StyledThumb
 
-export const SwitchToggle = () => {
+interface SwitchToggle {
+  styled?: any
+}
+
+export const SwitchToggle = ({ styled }: SwitchToggle) => {
   const dispatch = useDispatch()
 
   const theme = useGetTheme() //get the current theme
@@ -27,12 +30,12 @@ export const SwitchToggle = () => {
       <Switch
         defaultChecked
         id="s1"
-        className={style.switch}
+        className={`${style.switch}`}
         onCheckedChange={toggleTheme}
         checked={theme === 'dark'}
         data-theme={theme}
       >
-        <SwitchThumb />
+        <SwitchThumb className={`${style.switch__thumb}`} />
       </Switch>
     </>
   )

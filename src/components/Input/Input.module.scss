@@ -1,0 +1,31 @@
+.input {
+    background: transparent;
+
+    font-weight: bold;
+    
+    border: 1px solid var(--border-input);
+    border-radius: 8px;
+    
+    height: var(--inputHeight);
+    width: 100%;
+    max-width: 700px;
+
+    padding-left: 15px;
+
+    &[data-theme="dark"]{
+        color: var(--white);
+        
+        &:focus {
+            outline: none;
+            border: 2px solid var(--white);
+        }
+    }
+    &[data-theme="light"]{
+        color: var(--black);
+
+        &:focus {
+            outline: none;
+            border: 2px solid var(--black);
+        }
+    }
+}

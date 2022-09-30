@@ -24,24 +24,24 @@ body {
     
     --white: #fff;
     --black: #000;
-    --h1-fontSize: 2.375rem;
-    --h1-gap: 0.59rem;
+    --title-fontSize: 2.375rem;
+    --title-gap: 0.59rem;
     
     --fontButton: 1.063rem;
     --button-height: 2.25rem;
     --button-maxwidth: 12.188rem;
-    //--button-minwidth: 6.25rem
+    --button-minwidth: 100pxrem;
 
     @media screen and (max-width: 315px) {
-        --h1-fontSize: clamp(1rem, 10vw, 2.188rem);
+        --title-fontSize: clamp(1rem, 10vw, 2.188rem);
     }
-    @media screen and (min-width: 500px){
+    /* @media screen and (min-width: 500px){
         --button-maxwidth: 4.5rem;
         --button-minwidth: 4.563rem;
-    }
+    } */
     @media screen and (min-width:744px) {
-        --h1-fontSize: 3.313rem;
-        --h1-gap: 0.821rem;
+        --title-fontSize: 3.313rem;
+        --title-gap: 0.821rem;
 
         --inputHeight: 3.063rem;
         

@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import ResizeObserver from 'resize-observer-polyfill'
 import { store } from '../../store'
-import { Header } from '.'
+import { Search } from '.'
 import { Provider } from 'react-redux'
 
 describe('Header component', () => {
@@ -10,7 +10,7 @@ describe('Header component', () => {
   const MockProvider = () => {
     return (
       <Provider store={store}>
-        <Header theme="dark" />
+        <Search theme="dark" />
       </Provider>
     )
   }
@@ -37,6 +37,17 @@ describe('Header component', () => {
       const input = screen.getByRole('textbox') as HTMLInputElement
       fireEvent.change(input, { target: { value: 'someone' } })
       expect(input.value).toEqual('someone')
+    })
+  })
+
+  describe('Button', () => {
+    it('should be able to render the button', () => {
+      render(<MockProvider />)
+
+      const isButtonVisible = screen.getByRole('button', {
+        name: 'Buscar'
+      }) as HTMLButtonElement
+      expect(isButtonVisible).toBeInTheDocument()
     })
   })
 })

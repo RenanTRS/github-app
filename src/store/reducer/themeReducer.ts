@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-interface themeState {
-  theme: string
-}
-interface StateValue {
-  value: themeState
-}
+import { StateValue, themeState } from './types'
 
 const initialState = {
   value: { theme: 'dark' }

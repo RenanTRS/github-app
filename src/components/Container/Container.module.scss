@@ -1,7 +1,7 @@
 .container {
     min-height: 100vh;
     width: 100%;
-    padding: 30px;
+    padding: 10px;
 
     display: flex;
     justify-content: center;
@@ -13,14 +13,16 @@
     &[data-theme="light"] {
         background: var(--background-light);
     }
-
+    
     @media screen and (min-width: 1366px){
         display: flex;
         justify-content: center;
+        padding: 30px;
     }
 
     &__second {
         width: 100%;
+        position: relative;
 
         @media screen and (min-width: 1200px){
             width: 1200px;
