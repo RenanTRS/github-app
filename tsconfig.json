@@ -19,8 +19,5 @@
     "plugins": [{"name": "typescript-plugin-css-modules"}]
   },
   "include": ["src"],
-  "files": [
-    "src/style/styled.d.ts"
-  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
