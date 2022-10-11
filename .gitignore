@@ -24,3 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 yarn.lock
+
+src/components/User/
+src/services/mocks/
+src/context/
+src/teste.txt
