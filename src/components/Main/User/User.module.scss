@@ -1,0 +1,37 @@
+.user {
+    font-weight: bold;
+
+    &[data-theme="dark"] {
+        color: var(--white);
+    }
+    &[data-theme="light"] {
+        color: var(--black);
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        &_img {
+            width: 233px;
+            height: 233px;
+            border-radius: 50%;
+            background: var(--blue-linear);
+            padding: 4px;
+        }
+        &_name {
+            font-size: 16px;
+        }
+        &_user {
+            text-decoration: none;
+            &[data-theme="dark"] {
+                color: var(--white);
+            }
+            &[data-theme="light"] {
+                color: var(--black);
+            }
+        }
+    }
+}
