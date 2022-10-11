@@ -7,7 +7,7 @@ export const Input = ({ theme, value, change }: InputProps) => {
       type="text"
       className={style.input}
       placeholder="Pesquisar usuário..."
-      value={value}
+      value={value || ''}
       onChange={(e) => change(e.target.value)}
       data-theme={theme}
     />
