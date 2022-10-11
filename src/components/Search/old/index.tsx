@@ -1,7 +1,7 @@
 import { Wrapper } from './style'
 import { Input } from '../../old/Input'
 import { Button } from '../../old/Button/old'
-import { SwitchToggle } from '../../old/SwitchToggle'
+//import { SwitchToggle } from '../../old/SwitchToggle'
 import { FormEvent, useState } from 'react'
 
 interface HeaderProps {
@@ -23,7 +23,7 @@ export const Header = ({ onsubmit }: HeaderProps) => {
           placeholder="Digite o username"
         />
         <Button type="submit">Buscar</Button>
-        <SwitchToggle />
+        {/* <SwitchToggle /> */}
       </form>
     </Wrapper>
   )

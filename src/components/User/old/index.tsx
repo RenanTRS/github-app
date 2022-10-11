@@ -1,12 +1,10 @@
 import { memo, useState } from 'react'
-
-import { RepoShow, StarShow, ShowRepo, UserStyle } from './old/style'
-
+import { Repositories } from './Repositories'
+import { Starred } from './Starred'
+import { RepoShow, StarShow, ShowRepo, UserStyle } from './style'
+import { UserHeader } from './UserHeader'
 import { UserType } from 'types/UserType'
 import { ReposType } from 'types/ReposType'
-import { UserHeader } from './old/UserHeader'
-import { Repositories } from './old/Repositories'
-import { Starred } from './old/Starred'
 
 interface UserProps {
   user: UserType
