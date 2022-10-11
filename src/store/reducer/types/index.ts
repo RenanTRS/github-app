@@ -16,7 +16,7 @@ export interface StateReveal {
 
 //User
 export interface UserValue {
-  user: string
+  user: string | null
 }
 export interface UserState {
   value: UserValue
