@@ -1,10 +1,5 @@
-import { ReactNode } from 'react'
 import style from './Container.module.scss'
-
-interface ContainerProps {
-  theme: string
-  children: ReactNode
-}
+import { ContainerProps } from './types'
 
 export const Container = ({ theme, children }: ContainerProps) => {
   return (
