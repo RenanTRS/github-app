@@ -9,13 +9,17 @@ import { motion } from 'framer-motion'
 import { useGetPositionY } from 'hooks/useGetPositionY'
 import { HeaderVariants } from './variants'
 import { HeaderProps } from './types'
+import { addUser } from 'store/reducer/userReducer'
+import { useDispatch } from 'react-redux'
 
 export const Header = ({ theme, user }: HeaderProps) => {
   const [value, setValue] = useState<string>('')
   const show = useGetPositionY()
+  const dispatch = useDispatch()
 
   const handlerSubmit = (event: FormEvent) => {
     event.preventDefault()
+    dispatch(addUser({ user: value }))
   }
 
   useEffect(() => {
