@@ -4,7 +4,7 @@ import { store } from '../../store'
 import { Search } from '.'
 import { Provider } from 'react-redux'
 
-describe('Header component', () => {
+describe('Search component', () => {
   window.ResizeObserver = ResizeObserver
 
   const MockProvider = () => {
