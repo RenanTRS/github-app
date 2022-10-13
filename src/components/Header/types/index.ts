@@ -1,5 +1,4 @@
 export interface HeaderProps {
-  theme: string
   user: string
 }
 

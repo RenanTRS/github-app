@@ -11,8 +11,10 @@ import { HeaderVariants } from './variants'
 import { HeaderProps } from './types'
 import { addUser } from 'store/reducer/userReducer'
 import { useDispatch } from 'react-redux'
+import { useGetTheme } from 'hooks/useGetTheme'
 
-export const Header = ({ theme, user }: HeaderProps) => {
+export const Header = ({ user }: HeaderProps) => {
+  const theme = useGetTheme()
   const [value, setValue] = useState<string>('')
   const show = useGetPositionY()
   const dispatch = useDispatch()
