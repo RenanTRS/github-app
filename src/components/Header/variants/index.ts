@@ -1,12 +1,12 @@
-import { HeaderVariantsProps } from '../types'
+//import { HeaderVariantsProps } from '../types'
 
-export const HeaderVariants = ({ show }: HeaderVariantsProps) => {
+export const HeaderVariants = () => {
   const headerVariants = {
     hidden: {
       y: -100
     },
     visible: {
-      y: show,
+      y: 0,
       transition: {
         duration: 1,
         delay: 0.5

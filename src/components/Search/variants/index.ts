@@ -1,20 +1,27 @@
-import { IPositionY } from '../types/index'
+//import { IPositionY } from '../types/index'
 
-interface VariantProps {
-  positionY: IPositionY
-}
-export const SearchVariants = ({ positionY }: VariantProps) => {
+/* interface VariantProps {
+  positionY?: IPositionY
+} */
+export const SearchVariants = () => {
   const revealVariant = {
     hidden: {
       y: 60,
       opacity: 0
     },
     visible: {
-      y: positionY.y,
+      y: 0,
       opacity: 1,
       transition: {
-        duration: 1,
-        delay: positionY.delayHeader
+        duration: 1
+        //delay: positionY.delayHeader
+      }
+    },
+    exit: {
+      y: '-100vh',
+      opacity: 0,
+      transition: {
+        duration: 0.5
       }
     }
   }
