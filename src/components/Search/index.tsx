@@ -19,10 +19,12 @@ import { useDispatch } from 'react-redux'
 import { show } from '../../store/reducer/revealReducer'
 import { addUser } from 'store/reducer/userReducer'
 import { useGetTheme } from 'hooks/useGetTheme'
+import { useNavigate } from 'react-router-dom'
 
 export const Search = () => {
-  const dispatch = useDispatch()
   const theme = useGetTheme()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const [value, setValue] = useState<string>('')
   const [positionY, setPositionY] = useState<IPositionY>({
@@ -35,6 +37,7 @@ export const Search = () => {
   const handlerSubmit = (event: FormEvent) => {
     event.preventDefault()
     dispatch(addUser({ user: value }))
+    navigate('/profile')
   }
 
   const handlerClick = () => {

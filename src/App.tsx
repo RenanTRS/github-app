@@ -4,8 +4,8 @@ import { useGetUser } from 'hooks/useGetUser'
 import { ApolloProvider } from '@apollo/client'
 import { client } from 'lib/apollo'
 
-import { Header } from 'components/Header'
 import { Container } from 'components/Container'
+import { Route, Routes } from 'react-router-dom'
 import { Search } from 'components/Search'
 import { Main } from 'components/Main'
 
@@ -15,11 +15,12 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <Header theme={theme} user={user} />
-
       <Container theme={theme}>
-        <Search />
-        {user !== null && <Main user={user} />}
+        <Routes>
+          <Route path="/" element={<Search />} />
+          <Route path="/profile" element={<Main user={user} />} />
+          <Route path="*" element={<Search />} />
+        </Routes>
       </Container>
     </ApolloProvider>
   )
