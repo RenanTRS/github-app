@@ -18,7 +18,7 @@ function App() {
       <Header theme={theme} user={user} />
 
       <Container theme={theme}>
-        <Search theme={theme} />
+        <Search />
         {user !== null && <Main user={user} />}
       </Container>
     </ApolloProvider>

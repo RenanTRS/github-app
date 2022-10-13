@@ -12,15 +12,17 @@ import { motion } from 'framer-motion'
 import { SearchVariants } from './variants'
 
 //types
-import { SearchProps, IPositionY } from './types'
+import { IPositionY } from './types'
 import { Input } from 'components/Input'
 import { Button } from 'components/Button'
 import { useDispatch } from 'react-redux'
 import { show } from '../../store/reducer/revealReducer'
 import { addUser } from 'store/reducer/userReducer'
+import { useGetTheme } from 'hooks/useGetTheme'
 
-export const Search = ({ theme }: SearchProps) => {
+export const Search = () => {
   const dispatch = useDispatch()
+  const theme = useGetTheme()
 
   const [value, setValue] = useState<string>('')
   const [positionY, setPositionY] = useState<IPositionY>({
