@@ -6,8 +6,7 @@ import { Button } from 'components/Button'
 import { SwitchToggle } from 'components/SwitchToggle'
 
 import { motion } from 'framer-motion'
-import { useGetPositionY } from 'hooks/useGetPositionY'
-import { HeaderVariants } from './variants'
+import { headerVariants } from './variants'
 import { HeaderProps } from './types'
 import { addUser } from 'store/reducer/userReducer'
 import { useDispatch } from 'react-redux'
@@ -16,7 +15,6 @@ import { useGetTheme } from 'hooks/useGetTheme'
 export const Header = ({ user }: HeaderProps) => {
   const theme = useGetTheme()
   const [value, setValue] = useState<string>('')
-  const show = useGetPositionY()
   const dispatch = useDispatch()
 
   const handlerSubmit = (event: FormEvent) => {
@@ -27,8 +25,6 @@ export const Header = ({ user }: HeaderProps) => {
   useEffect(() => {
     setValue(user)
   }, [user])
-
-  const { headerVariants } = HeaderVariants({ show })
 
   return (
     <motion.header

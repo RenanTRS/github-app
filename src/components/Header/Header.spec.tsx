@@ -9,7 +9,7 @@ describe('Header component', () => {
   const MockProvider = () => {
     return (
       <Provider store={store}>
-        <Header theme="dark" user="someone" />
+        <Header user="someone" />
       </Provider>
     )
   }
