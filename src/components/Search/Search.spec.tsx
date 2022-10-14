@@ -3,6 +3,7 @@ import ResizeObserver from 'resize-observer-polyfill'
 import { store } from '../../store'
 import { Search } from '.'
 import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
 describe('Search component', () => {
   window.ResizeObserver = ResizeObserver
@@ -10,7 +11,9 @@ describe('Search component', () => {
   const MockProvider = () => {
     return (
       <Provider store={store}>
-        <Search />
+        <BrowserRouter>
+          <Search />
+        </BrowserRouter>
       </Provider>
     )
   }
