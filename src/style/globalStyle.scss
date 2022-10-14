@@ -35,10 +35,7 @@ body {
     @media screen and (max-width: 315px) {
         --title-fontSize: clamp(1rem, 10vw, 2.188rem);
     }
-    /* @media screen and (min-width: 500px){
-        --button-maxwidth: 4.5rem;
-        --button-minwidth: 4.563rem;
-    } */
+    
     @media screen and (min-width:744px) {
         --title-fontSize: 3.313rem;
         --title-gap: 0.821rem;
