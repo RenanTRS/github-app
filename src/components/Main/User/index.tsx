@@ -7,20 +7,30 @@ import {
   BookBookmark,
   MapPinLine
 } from 'phosphor-react'
+import { motion } from 'framer-motion'
+import { containerUserVariants, itemUserVariants } from '../variants'
 
 export const User = ({ dataUser }: UserProps) => {
   //console.log(dataUser)
   const theme = useGetTheme()
   return (
-    <section className={style.user} data-theme={theme}>
-      <div className={style.user__data}>
+    <motion.section
+      className={style.user}
+      data-theme={theme}
+      variants={containerUserVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className={style.user__data} variants={itemUserVariants}>
         <img
           src={dataUser?.avatar}
           alt="user"
           title={dataUser?.login}
           className={style.user__data_img}
         />
+
         <span className={style.user__data_name}>{dataUser?.name}</span>
+
         <a
           href={dataUser?.url}
           target="_blank"
@@ -29,23 +39,24 @@ export const User = ({ dataUser }: UserProps) => {
         >
           {dataUser?.login}
         </a>
-      </div>
-      <div className="user__media">
+      </motion.div>
+
+      <motion.div className={style.user__media} variants={itemUserVariants}>
         <span>
-          <UsersThree /> {dataUser?.followers}
+          <UsersThree weight="bold" fontSize={20} /> {dataUser?.followers}
         </span>
 
         <span>
-          <UserP /> {dataUser?.following}
+          <UserP weight="bold" fontSize={20} /> {dataUser?.following}
         </span>
 
         <span>
-          <BookBookmark /> {dataUser?.repositories}
+          <BookBookmark weight="bold" fontSize={20} /> {dataUser?.repositories}
         </span>
         <span>
-          <MapPinLine /> {dataUser?.location}
+          <MapPinLine weight="bold" fontSize={20} /> {dataUser?.location}
         </span>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }

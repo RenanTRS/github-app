@@ -1,0 +1,19 @@
+.main{
+    align-self: flex-start;
+    
+    &__loading {
+        width: 50px;
+        height: 50px;
+    }
+    &__container {
+        margin-top: 6.25rem;
+    }
+}
+
+.loading {
+    position: absolute;
+    &__img {
+        width: 50px;
+        height: 50px;
+    }
+}
