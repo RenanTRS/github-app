@@ -10,7 +10,7 @@ describe('Search component', () => {
   const MockProvider = () => {
     return (
       <Provider store={store}>
-        <Search theme="dark" />
+        <Search />
       </Provider>
     )
   }

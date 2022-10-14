@@ -9,17 +9,16 @@ import { SwitchToggle } from '../SwitchToggle'
 
 //motions
 import { motion } from 'framer-motion'
-import { SearchVariants } from './variants'
 
 //types
-import { IPositionY } from './types'
 import { Input } from 'components/Input'
 import { Button } from 'components/Button'
 import { useDispatch } from 'react-redux'
-import { show } from '../../store/reducer/revealReducer'
+
 import { addUser } from 'store/reducer/userReducer'
 import { useGetTheme } from 'hooks/useGetTheme'
 import { useNavigate } from 'react-router-dom'
+import { revealVariant } from './variants'
 
 export const Search = () => {
   const theme = useGetTheme()
@@ -27,23 +26,11 @@ export const Search = () => {
   const dispatch = useDispatch()
 
   const [value, setValue] = useState<string>('')
-  const [positionY, setPositionY] = useState<IPositionY>({
-    y: '0',
-    delayHeader: 1
-  })
-
-  const { revealVariant } = SearchVariants({ positionY })
 
   const handlerSubmit = (event: FormEvent) => {
     event.preventDefault()
     dispatch(addUser({ user: value }))
     navigate('/profile')
-  }
-
-  const handlerClick = () => {
-    setPositionY((prev) => (prev = { y: '-100vh', delayHeader: 0 }))
-
-    dispatch(show({ reveal: 0 }))
   }
 
   return (
@@ -52,6 +39,7 @@ export const Search = () => {
       variants={revealVariant}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <div className={style.title_search}>
         <img src={logoImg} alt="Logo" className={style.title_search__img} />
@@ -65,7 +53,7 @@ export const Search = () => {
         <Input value={value} theme={theme} change={setValue} />
 
         <div className={style.search__form_actions}>
-          <Button click={handlerClick} styled={style.minwidth} theme={theme} />
+          <Button styled={style.minwidth} theme={theme} />
 
           <SwitchToggle />
         </div>

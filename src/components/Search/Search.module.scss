@@ -12,6 +12,8 @@
     .title_search {
         display: flex;
         align-items: center;
+        width: 100%;
+        justify-content: center;
         gap: var(--title-gap);
 
         &__img {
@@ -27,6 +29,7 @@
         &__title {
             font-size: var(--title-fontSize);
             font-weight: bold;
+            
             &[data-theme="dark"]{
                 color: var(--white)
             }
