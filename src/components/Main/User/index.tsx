@@ -8,11 +8,42 @@ import {
   MapPinLine
 } from 'phosphor-react'
 import { motion } from 'framer-motion'
-import { containerUserVariants, itemUserVariants } from '../variants'
+import {
+  containerUserVariants,
+  itemUserVariants,
+  loadingVariants
+} from '../variants'
 
-export const User = ({ dataUser }: UserProps) => {
+import logoImg from '../../../assets/img/gitHub-bg.svg'
+
+export const User = ({ dataUser, loading, error }: UserProps) => {
   //console.log(dataUser)
   const theme = useGetTheme()
+
+  const test = true
+  if (loading) {
+    return (
+      <main className={style.loading}>
+        <motion.img
+          className={style.loading__img}
+          src={logoImg}
+          alt="Loading"
+          variants={loadingVariants}
+          initial="hidden"
+          animate="visible"
+        />
+      </main>
+    )
+  }
+
+  if (error) {
+    //console.log(error?.networkError) //erro de internet
+    if (error.networkError) {
+      return <p>Error de internet</p>
+    }
+    return <p>Erro: User não encontrado</p>
+  }
+
   return (
     <motion.section
       className={style.user}

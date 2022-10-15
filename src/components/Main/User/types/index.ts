@@ -1,3 +1,5 @@
+import { ApolloError } from '@apollo/client'
+
 export interface UserProps {
   dataUser: {
     avatar?: string
@@ -9,4 +11,6 @@ export interface UserProps {
     following?: number
     repositories?: number
   }
+  loading: boolean
+  error?: ApolloError
 }
