@@ -5,7 +5,8 @@ import {
   UsersThree,
   User as UserP,
   BookBookmark,
-  MapPinLine
+  MapPinLine,
+  Warning
 } from 'phosphor-react'
 import { motion } from 'framer-motion'
 import {
@@ -20,7 +21,6 @@ export const User = ({ dataUser, loading, error }: UserProps) => {
   //console.log(dataUser)
   const theme = useGetTheme()
 
-  const test = true
   if (loading) {
     return (
       <main className={style.loading}>
@@ -37,11 +37,19 @@ export const User = ({ dataUser, loading, error }: UserProps) => {
   }
 
   if (error) {
-    //console.log(error?.networkError) //erro de internet
-    if (error.networkError) {
-      return <p>Error de internet</p>
-    }
-    return <p>Erro: User não encontrado</p>
+    return (
+      <main>
+        {error.networkError ? (
+          <p>
+            <Warning weight="bold" /> Erro de conexão
+          </p>
+        ) : (
+          <p>
+            <Warning weight="bold" /> Usuário não encontrado
+          </p>
+        )}
+      </main>
+    )
   }
 
   return (
