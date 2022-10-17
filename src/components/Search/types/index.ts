@@ -1,4 +1,3 @@
-export interface IPositionY {
-  y: string
-  delayHeader: number
+export interface SearchProps {
+  submit: (user: string) => void
 }
