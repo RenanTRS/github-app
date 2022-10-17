@@ -9,28 +9,23 @@ import { SwitchToggle } from '../SwitchToggle'
 
 //motions
 import { motion } from 'framer-motion'
+import { revealVariant } from './variants'
 
 //types
 import { Input } from 'components/Input'
 import { Button } from 'components/Button'
-import { useDispatch } from 'react-redux'
 
-import { addUser } from 'store/reducer/userReducer'
 import { useGetTheme } from 'hooks/useGetTheme'
-import { useNavigate } from 'react-router-dom'
-import { revealVariant } from './variants'
+import { SearchProps } from './types'
 
-export const Search = () => {
+export const Search = ({ submit }: SearchProps) => {
   const theme = useGetTheme()
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
 
   const [value, setValue] = useState<string>('')
 
   const handlerSubmit = (event: FormEvent) => {
     event.preventDefault()
-    dispatch(addUser({ user: value }))
-    navigate('/profile')
+    submit(value)
   }
 
   return (
@@ -53,7 +48,7 @@ export const Search = () => {
         <Input value={value} theme={theme} change={setValue} />
 
         <div className={style.search__form_actions}>
-          <Button styled={style.minwidth} theme={theme} />
+          <Button styled={style.minwidth} theme={theme} value={value} />
 
           <SwitchToggle />
         </div>
