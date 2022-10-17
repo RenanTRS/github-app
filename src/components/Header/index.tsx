@@ -36,7 +36,7 @@ export const Header = ({ user }: HeaderProps) => {
     >
       <form onSubmit={handlerSubmit} className={style.header__form}>
         <Input value={value} change={setValue} theme={theme} />
-        <Button theme={theme} styled={style.minwidth} />
+        <Button theme={theme} styled={style.minwidth} value={value} />
         <SwitchToggle styled={style.switch} />
       </form>
     </motion.header>
