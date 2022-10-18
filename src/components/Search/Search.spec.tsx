@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 
 describe('Search component', () => {
   window.ResizeObserver = ResizeObserver
-  const submitFn = jest.fn()
+  const submitFn = jest.fn() //mock function
 
   const MockProvider = () => {
     return (
