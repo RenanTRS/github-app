@@ -11,8 +11,11 @@ import { Header } from 'components/Header'
 import logoImg from '../../assets/img/gitHub-bg.svg'
 import { loadingVariants } from './variants'
 import { Warning } from 'phosphor-react'
+import { useDispatch } from 'react-redux'
+import { addUser } from 'store/reducer/userReducer'
 
 export const Main = ({ user }: MainProps) => {
+  const dispatch = useDispatch()
   const [value, setValue] = useState<ValueProps>()
   const { data, error, loading, resUser } = useGetData({ user })
 
@@ -22,9 +25,12 @@ export const Main = ({ user }: MainProps) => {
     }
   }, [data])
 
+  const headerSubmit = (user: string) => {
+    dispatch(addUser({ user: user }))
+  }
   return (
     <main className={style.main}>
-      <Header user={user} />
+      <Header user={user} submit={headerSubmit} />
 
       <div className={style.main__container}>
         {loading ? (

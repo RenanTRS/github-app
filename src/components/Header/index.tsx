@@ -8,18 +8,15 @@ import { SwitchToggle } from 'components/SwitchToggle'
 import { motion } from 'framer-motion'
 import { headerVariants } from './variants'
 import { HeaderProps } from './types'
-import { addUser } from 'store/reducer/userReducer'
-import { useDispatch } from 'react-redux'
 import { useGetTheme } from 'hooks/useGetTheme'
 
-export const Header = ({ user }: HeaderProps) => {
+export const Header = ({ user, submit }: HeaderProps) => {
   const theme = useGetTheme()
   const [value, setValue] = useState<string>('')
-  const dispatch = useDispatch()
 
   const handlerSubmit = (event: FormEvent) => {
     event.preventDefault()
-    dispatch(addUser({ user: value }))
+    submit(value)
   }
 
   useEffect(() => {
