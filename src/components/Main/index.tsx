@@ -13,15 +13,8 @@ import logoImg from '../../assets/img/gitHub-bg.svg'
 import { loadingVariants } from './variants'
 
 export const Main = ({ user }: MainProps) => {
-  const navigate = useNavigate()
-
   const [value, setValue] = useState<ValueProps>()
   const { data, error, loading, resUser } = useGetData({ user })
-
-  //if user is empty
-  if (!user) {
-    navigate('/')
-  }
 
   useEffect(() => {
     if (data) {
