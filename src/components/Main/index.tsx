@@ -7,10 +7,10 @@ import { User } from './User'
 import { useEffect, useState } from 'react'
 import { useGetData } from './hooks/useGetData'
 import { Header } from 'components/Header'
-import { useNavigate } from 'react-router-dom'
 
 import logoImg from '../../assets/img/gitHub-bg.svg'
 import { loadingVariants } from './variants'
+import { Warning } from 'phosphor-react'
 
 export const Main = ({ user }: MainProps) => {
   const [value, setValue] = useState<ValueProps>()
@@ -27,7 +27,36 @@ export const Main = ({ user }: MainProps) => {
       <Header user={user} />
 
       <div className={style.main__container}>
-        <User dataUser={value?.userData!} loading={loading} error={error} />
+        {loading ? (
+          <div className={style.loading}>
+            <motion.img
+              className={style.loading__img}
+              src={logoImg}
+              alt="Loading"
+              variants={loadingVariants}
+              initial="hidden"
+              animate="visible"
+            />
+          </div>
+        ) : (
+          <>
+            {error ? (
+              <div>
+                {error.networkError ? (
+                  <p>
+                    <Warning weight="bold" /> Erro de conexão
+                  </p>
+                ) : (
+                  <p>
+                    <Warning weight="bold" /> Usuário não encontrado
+                  </p>
+                )}
+              </div>
+            ) : (
+              <User dataUser={value?.userData!} />
+            )}
+          </>
+        )}
       </div>
     </main>
   )
