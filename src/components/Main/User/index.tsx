@@ -5,52 +5,14 @@ import {
   UsersThree,
   User as UserP,
   BookBookmark,
-  MapPinLine,
-  Warning
+  MapPinLine
 } from 'phosphor-react'
 import { motion } from 'framer-motion'
-import {
-  containerUserVariants,
-  itemUserVariants,
-  loadingVariants
-} from '../variants'
+import { containerUserVariants, itemUserVariants } from '../variants'
 
-import logoImg from '../../../assets/img/gitHub-bg.svg'
-
-export const User = ({ dataUser, loading, error }: UserProps) => {
+export const User = ({ dataUser }: UserProps) => {
   //console.log(dataUser)
   const theme = useGetTheme()
-
-  if (loading) {
-    return (
-      <main className={style.loading}>
-        <motion.img
-          className={style.loading__img}
-          src={logoImg}
-          alt="Loading"
-          variants={loadingVariants}
-          initial="hidden"
-          animate="visible"
-        />
-      </main>
-    )
-  }
-
-  if (error) {
-    return (
-      <main>
-        {error.networkError ? (
-          <p>
-            <Warning weight="bold" /> Erro de conexão
-          </p>
-        ) : (
-          <p>
-            <Warning weight="bold" /> Usuário não encontrado
-          </p>
-        )}
-      </main>
-    )
-  }
 
   return (
     <motion.section
