@@ -11,6 +11,4 @@ export interface UserProps {
     following?: number
     repositories?: number
   }
-  loading: boolean
-  error?: ApolloError
 }
