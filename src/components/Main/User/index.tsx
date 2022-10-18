@@ -28,6 +28,7 @@ export const User = ({ dataUser }: UserProps) => {
           alt="user"
           title={dataUser?.login}
           className={style.user__data_img}
+          data-testid="avatar-user"
         />
 
         <span className={style.user__data_name}>{dataUser?.name}</span>
