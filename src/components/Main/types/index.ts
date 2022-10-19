@@ -26,6 +26,7 @@ interface StarNode {
 export interface ReposNode {
   name: string
   description: string
+  url: string
   issues: {
     totalCount: number
   }
