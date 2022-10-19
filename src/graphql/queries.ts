@@ -15,12 +15,13 @@ export const GET_USER = gql`
       following {
         totalCount
       }
-      repositories(last: 5, orderBy: { field: CREATED_AT, direction: DESC }) {
+      repositories(first: 30, orderBy: { field: CREATED_AT, direction: DESC }) {
         totalCount
         nodes {
           name
           description
-          issues {
+          url
+          issues(states: OPEN) {
             totalCount
           }
           forkCount
