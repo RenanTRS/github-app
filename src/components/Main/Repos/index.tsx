@@ -6,7 +6,6 @@ import { containerReposVariants } from '../variants'
 import { ReposProps } from './types'
 
 export const Repos = ({ dataRepos }: ReposProps) => {
-  console.log(dataRepos)
   const theme = useGetTheme()
 
   return (

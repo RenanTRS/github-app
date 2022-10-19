@@ -36,7 +36,6 @@ export const Main = ({ user }: MainProps) => {
     setIsRepo(value)
   }
 
-  //console.log(reposData)
   return (
     <main className={style.main}>
       <Header user={user} submit={headerSubmit} />
@@ -73,7 +72,13 @@ export const Main = ({ user }: MainProps) => {
 
                 <ToggleRepos isRepo={isRepo} change={handlerChangeRepos} />
 
-                <Repos dataRepos={value?.reposData.repositories!} />
+                <Repos
+                  dataRepos={
+                    isRepo
+                      ? value?.reposData.repositories!
+                      : value?.starsData.starredRepositories
+                  }
+                />
               </>
             )}
           </>

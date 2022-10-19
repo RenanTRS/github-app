@@ -11,7 +11,6 @@ import { motion } from 'framer-motion'
 import { containerUserVariants, itemUserVariants } from '../variants'
 
 export const User = ({ dataUser }: UserProps) => {
-  //console.log(dataUser)
   const theme = useGetTheme()
 
   return (
