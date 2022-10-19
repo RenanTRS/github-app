@@ -14,14 +14,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     z-index: 10;
-
+    
     &[data-theme="dark"] {
         background: var(--background-dark);
+        border-bottom: 1px solid var(--middle-gray);
     }
     &[data-theme="light"] {
         background: var(--background-light);
+        border-bottom: 1px solid var(--light-gray);
     }
 
     &__form {
