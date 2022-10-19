@@ -21,10 +21,14 @@ export const useGetData = ({ user }: UseGetDataProps) => {
   const reposData = {
     repositories: data?.user.repositories.nodes
   }
+  const starsData = {
+    starredRepositories: data?.user.starredRepositories.nodes
+  }
 
   const resUser = {
     userData,
-    reposData
+    reposData,
+    starsData
   }
   return { data, resUser, loading, error }
 }

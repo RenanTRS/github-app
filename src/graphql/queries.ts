@@ -26,7 +26,30 @@ export const GET_USER = gql`
           }
           forkCount
           stargazerCount
-          repositoryTopics(last: 5) {
+          repositoryTopics(last: 10) {
+            nodes {
+              topic {
+                name
+              }
+            }
+          }
+        }
+      }
+      starredRepositories(
+        last: 30
+        orderBy: { field: STARRED_AT, direction: DESC }
+      ) {
+        totalCount
+        nodes {
+          name
+          description
+          url
+          issues(states: OPEN) {
+            totalCount
+          }
+          forkCount
+          stargazerCount
+          repositoryTopics(last: 10) {
             nodes {
               topic {
                 name

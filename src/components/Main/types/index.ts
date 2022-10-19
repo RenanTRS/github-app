@@ -16,6 +16,9 @@ export interface ValueProps {
   reposData: {
     repositories?: ReposNode[]
   }
+  starsData: {
+    starredRepositories?: ReposNode[]
+  }
 }
 
 interface StarNode {
@@ -53,6 +56,10 @@ export interface UseQueryGraph {
     totalCount: number
   }
   repositories: {
+    totalCount: number
+    nodes: ReposNode[]
+  }
+  starredRepositories: {
     totalCount: number
     nodes: ReposNode[]
   }
