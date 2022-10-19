@@ -13,10 +13,13 @@ import { loadingVariants } from './variants'
 import { Warning } from 'phosphor-react'
 import { useDispatch } from 'react-redux'
 import { addUser } from 'store/reducer/userReducer'
+import { Repos } from './Repos'
+import { ToggleRepos } from './ToggleRepos'
 
 export const Main = ({ user }: MainProps) => {
   const dispatch = useDispatch()
   const [value, setValue] = useState<ValueProps>()
+  const [isRepo, setIsRepo] = useState<boolean>(true)
   const { data, error, loading, resUser } = useGetData({ user })
 
   useEffect(() => {
@@ -28,6 +31,12 @@ export const Main = ({ user }: MainProps) => {
   const headerSubmit = (user: string) => {
     dispatch(addUser({ user: user }))
   }
+
+  const handlerChangeRepos = (value: boolean) => {
+    setIsRepo(value)
+  }
+
+  //console.log(reposData)
   return (
     <main className={style.main}>
       <Header user={user} submit={headerSubmit} />
@@ -59,7 +68,13 @@ export const Main = ({ user }: MainProps) => {
                 )}
               </div>
             ) : (
-              <User dataUser={value?.userData!} />
+              <>
+                <User dataUser={value?.userData!} />
+
+                <ToggleRepos isRepo={isRepo} change={handlerChangeRepos} />
+
+                <Repos dataRepos={value?.reposData.repositories!} />
+              </>
             )}
           </>
         )}
