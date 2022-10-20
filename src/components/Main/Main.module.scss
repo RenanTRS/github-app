@@ -4,9 +4,16 @@
     &__container {
         margin-top: 6.25rem;
         
-        @media screen and (min-width: 830px){
+        @media screen and (min-width: 830px) {
             width: 100%;
             display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        @media screen and (max-width: 930px) and (orientation: landscape) {
+            width: initial;
+            display: block;
             gap: 2rem;
             align-items: center;
             justify-content: space-evenly;
