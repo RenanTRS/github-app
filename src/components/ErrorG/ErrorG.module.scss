@@ -7,7 +7,7 @@
     height: calc(100vh - 200px);
 
     color: var(--red);
-    font-size: 30px;
+    font-size: clamp(1rem, 5vw, 1.875rem); //30px max
 
     span {
         display: flex;
