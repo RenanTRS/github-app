@@ -43,18 +43,18 @@ export const User = ({ dataUser }: UserProps) => {
       </motion.div>
 
       <motion.div className={style.user__media} variants={itemUserVariants}>
-        <span>
+        <span title="Followers">
           <UsersThree weight="bold" fontSize={20} /> {dataUser?.followers}
         </span>
 
-        <span>
+        <span title="Following">
           <UserP weight="bold" fontSize={20} /> {dataUser?.following}
         </span>
 
-        <span>
+        <span title="Repositories">
           <BookBookmark weight="bold" fontSize={20} /> {dataUser?.repositories}
         </span>
-        <span>
+        <span title="Location">
           <MapPinLine weight="bold" fontSize={20} /> {dataUser?.location}
         </span>
       </motion.div>
