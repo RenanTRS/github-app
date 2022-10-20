@@ -1,8 +1,16 @@
 .main{
     align-self: flex-start;
-
+    
     &__container {
         margin-top: 6.25rem;
+        
+        @media screen and (min-width: 830px){
+            width: 100%;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-evenly;
+        }
     }
 } 
 

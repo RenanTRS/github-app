@@ -1,16 +1,30 @@
 .repos {
+    @media screen and (min-width: 1024px){
+        height: calc(100vh - 160px);
+        overflow-y: scroll;
+        
+    }
+
     &[data-theme="dark"] {
         color: var(--white);
     }
     &[data-theme="light"] {
         color: var(--black);
     }
+    overflow: hidden;
 
     &__list {
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
         gap: 0.625rem; //10px
+
+        @media screen and (min-width: 1024px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (min-width: 1200px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
     &__container {
         &[data-theme="dark"] {

@@ -16,6 +16,11 @@
     align-items: center;
     
     z-index: 10;
+
+    @media screen and (max-width: 815px) and (orientation: landscape) {
+        position: absolute;
+        height: 76px;
+    }
     
     &[data-theme="dark"] {
         background: var(--background-dark);

@@ -68,9 +68,11 @@ export const Main = ({ user }: MainProps) => {
               </div>
             ) : (
               <>
-                <User dataUser={value?.userData!} />
+                <div>
+                  <User dataUser={value?.userData!} />
 
-                <ToggleRepos isRepo={isRepo} change={handlerChangeRepos} />
+                  <ToggleRepos isRepo={isRepo} change={handlerChangeRepos} />
+                </div>
 
                 <Repos
                   dataRepos={

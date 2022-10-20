@@ -3,6 +3,10 @@
     justify-content: center;
     margin: 16px auto;
 
+    @media screen and (min-width: 1200px){
+        grid-area: user;
+    }
+    
     span {
         &[data-theme="dark"] {
             color: var(--white);

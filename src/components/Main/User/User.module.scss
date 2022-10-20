@@ -8,6 +8,10 @@
         color: var(--black);
     }
 
+    @media screen and (min-width: 1200px){
+        grid-area: user;
+    }
+
     &__data {
         display: flex;
         flex-direction: column;
