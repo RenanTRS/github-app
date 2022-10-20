@@ -42,16 +42,7 @@ export const Main = ({ user }: MainProps) => {
 
       <div className={style.main__container}>
         {loading ? (
-          <div className={style.loading}>
-            <motion.img
-              className={style.loading__img}
-              src={logoImg}
-              alt="Loading"
-              variants={loadingVariants}
-              initial="hidden"
-              animate="visible"
-            />
-          </div>
+          <Loading />
         ) : (
           <>
             {error ? (
