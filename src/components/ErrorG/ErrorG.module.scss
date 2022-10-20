@@ -1,0 +1,19 @@
+.errorg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: calc(100vh - 200px);
+
+    color: var(--red);
+    font-size: 30px;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        
+        font-weight: bold;
+    }
+}

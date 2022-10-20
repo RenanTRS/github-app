@@ -1,13 +1,25 @@
 import { ApolloError } from '@apollo/client'
 import { Warning } from 'phosphor-react'
 
+import style from './ErrorG.module.scss'
+import { motion } from 'framer-motion'
+
 interface ErrorGProps {
   error: ApolloError
 }
 
 export const ErrorG = ({ error }: ErrorGProps) => {
   return (
-    <div>
+    <motion.div
+      className={style.errorg}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 0.5
+        }
+      }}
+    >
       {error.networkError ? (
         <span>
           <Warning weight="bold" /> Erro de conexão
@@ -17,6 +29,6 @@ export const ErrorG = ({ error }: ErrorGProps) => {
           <Warning weight="bold" /> Usuário não encontrado
         </span>
       )}
-    </div>
+    </motion.div>
   )
 }
