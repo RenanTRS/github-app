@@ -1,20 +1,19 @@
-import { motion } from 'framer-motion'
 import style from './Main.module.scss'
 
 import { MainProps, ValueProps } from './types'
-import { User } from './User'
 
 import { useEffect, useState } from 'react'
 import { useGetData } from './hooks/useGetData'
-import { Header } from 'components/Header'
 
-import logoImg from '../../assets/img/gitHub-bg.svg'
-import { loadingVariants } from './variants'
-import { Warning } from 'phosphor-react'
 import { useDispatch } from 'react-redux'
 import { addUser } from 'store/reducer/userReducer'
-import { Repos } from './Repos'
+
+import { Header } from 'components/Header'
+import { Loading } from 'components/Loading'
+import { ErrorG } from 'components/ErrorG'
+import { User } from './User'
 import { ToggleRepos } from './ToggleRepos'
+import { Repos } from './Repos'
 
 export const Main = ({ user }: MainProps) => {
   const dispatch = useDispatch()
@@ -46,17 +45,9 @@ export const Main = ({ user }: MainProps) => {
         ) : (
           <>
             {error ? (
-              <div>
-                {error.networkError ? (
-                  <p>
-                    <Warning weight="bold" /> Erro de conexão
-                  </p>
-                ) : (
-                  <p>
-                    <Warning weight="bold" /> Usuário não encontrado
-                  </p>
-                )}
-              </div>
+              <>
+                <ErrorG error={error} />
+              </>
             ) : (
               <>
                 <div>
