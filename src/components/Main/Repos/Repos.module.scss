@@ -1,7 +1,7 @@
 .repos {
-    padding: 2rem;
     
     @media screen and (min-width: 930px){
+        padding: 2rem;
         height: calc(100vh - 160px);
         overflow-y: scroll;
         
