@@ -14,6 +14,7 @@ export const Input = ({ theme, value, change }: InputProps) => {
       value={value || ''}
       onChange={(e) => handlerChange(e.target.value)}
       data-theme={theme}
+      data-testid="input"
     />
   )
 }
