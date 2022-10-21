@@ -8,11 +8,7 @@ import { StyledSwitch, StyledThumb } from './Switch.style'
 const Switch = StyledSwitch
 const SwitchThumb = StyledThumb
 
-interface SwitchToggle {
-  styled?: any
-}
-
-export const SwitchToggle = ({ styled }: SwitchToggle) => {
+export const SwitchToggle = () => {
   const dispatch = useDispatch()
 
   const theme = useGetTheme() //get the current theme
