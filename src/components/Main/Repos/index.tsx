@@ -31,27 +31,39 @@ export const Repos = ({ dataRepos }: ReposProps) => {
                   target="_blank"
                   className={style.repos__cred_name}
                   data-theme={theme}
+                  data-testid="name"
                 >
                   {repo.name}
                 </a>
 
-                <p className={style.repos__cred_description}>
+                <p
+                  className={style.repos__cred_description}
+                  data-testid="description"
+                >
                   {repo.description}
                 </p>
               </div>
 
               <div className={style.repos__states}>
-                <span title={`Forks: ${repo.forkCount}`}>
-                  <GitFork weight="thin" size={18} /> {repo.forkCount}
+                <span title={`Forks: ${repo.forkCount}`} data-testid="states">
+                  <GitFork weight="thin" size={18} />
+                  {repo.forkCount}
                 </span>
 
-                <span title={`Open Issues: ${repo.issues.totalCount}`}>
+                <span
+                  title={`Open Issues: ${repo.issues.totalCount}`}
+                  data-testid="states"
+                >
                   <WarningCircle weight="thin" size={18} />
                   {repo.issues.totalCount}
                 </span>
 
-                <span title={`Stars: ${repo.stargazerCount}`}>
-                  <Star weight="thin" size={18} /> {repo.stargazerCount}
+                <span
+                  title={`Stars: ${repo.stargazerCount}`}
+                  data-testid="states"
+                >
+                  <Star weight="thin" size={18} />
+                  {repo.stargazerCount}
                 </span>
               </div>
 
@@ -61,7 +73,7 @@ export const Repos = ({ dataRepos }: ReposProps) => {
                     {repo.repositoryTopics.nodes.map((topic, key) => {
                       return (
                         <li key={key} className={style.repos__topics_topic}>
-                          <span>{topic.topic.name}</span>
+                          <span data-testid="topics">{topic.topic.name}</span>
                         </li>
                       )
                     })}
