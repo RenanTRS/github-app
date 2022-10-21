@@ -55,14 +55,16 @@ export const Main = ({ user }: MainProps) => {
 
                   <ToggleRepos isRepo={isRepo} change={handlerChangeRepos} />
                 </div>
-
-                <Repos
-                  dataRepos={
-                    isRepo
-                      ? value?.reposData.repositories!
-                      : value?.starsData.starredRepositories
-                  }
-                />
+                {resUser.reposData.repositories?.length! > 0 &&
+                  resUser.starsData.starredRepositories?.length! >= 0 && (
+                    <Repos
+                      dataRepos={
+                        isRepo
+                          ? value?.reposData.repositories!
+                          : value?.starsData.starredRepositories
+                      }
+                    />
+                  )}
               </>
             )}
           </>
