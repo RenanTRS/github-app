@@ -1,5 +1,5 @@
 export interface ButtonProps {
   theme: string
-  styled: any
+  styled?: any
   value: string
 }

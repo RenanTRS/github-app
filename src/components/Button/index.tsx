@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react'
 import style from './Button.module.scss'
 import { ButtonProps } from './types'
 
-export const Button = ({ theme, styled, value }: ButtonProps) => {
+const Search = ({ theme, styled, value }: ButtonProps) => {
   return (
     <button
       type="submit"
-      className={`${style.button} ${styled}`}
+      className={`${style.button} ${style.button__search}`}
       data-theme={theme}
       disabled={value === ''}
     >
@@ -14,3 +13,17 @@ export const Button = ({ theme, styled, value }: ButtonProps) => {
     </button>
   )
 }
+const Header = ({ theme, value }: ButtonProps) => {
+  return (
+    <button
+      type="submit"
+      className={`${style.button} ${style.button__header}`}
+      data-theme={theme}
+      disabled={value === ''}
+    >
+      Buscar
+    </button>
+  )
+}
+
+export const Button = { Search, Header }

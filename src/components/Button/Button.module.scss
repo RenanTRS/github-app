@@ -1,27 +1,33 @@
 .button {
     background: var(--blue-linear);
+    
     color: var(--white);
     font-size: var(--fontButton);
     font-weight: bold;
     
-    flex: 1;
-
-    height: var(--button-height);
-    max-width: var(--button-maxwidth);
-
     border: none;
     border-radius: 8px;
 
     cursor: pointer;
+    
+    &__search{
+        width: 100%;
+        height: var(--button-height);
+    }
+    &__header {
+        padding: .5rem;
+    }
 
     &:focus {
-        outline: none;
         &[data-theme="dark"]{
-            border: 2px solid var(--white);
+            outline: 2px solid var(--white);
         }
         &[data-theme="light"]{
-            border: 2px solid var(--black);
+            outline: 2px solid var(--black);
         }
+    }
+    &:active {
+        background: var(--blue-active);
     }
 
     &:disabled {
