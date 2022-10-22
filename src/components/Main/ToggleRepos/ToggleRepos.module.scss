@@ -1,0 +1,39 @@
+.toggle {
+    display: flex;
+    justify-content: center;
+    margin: 16px auto;
+
+    @media screen and (min-width: 1200px){
+        grid-area: user;
+    }
+    
+    span {
+        &[data-theme="dark"] {
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
+        &[data-theme="light"] {
+            color: var(--black);
+            border: 1px solid var(--black);
+        }
+        font-weight: bold;
+        text-align: center;
+        font-size: 12px;
+        padding: 8px 12px;
+        width: 100px;
+        height: 33px;
+        cursor: pointer;
+    }
+    span:first-child{
+        border-radius: 50px 0 0 50px;
+        transform: translateX(1px);
+    }
+    span:last-child {
+        border-radius: 0 50px 50px 0;
+    }
+
+    .active {
+        background: var(--blue-linear);
+        color: var(--white) !important;
+    }
+}

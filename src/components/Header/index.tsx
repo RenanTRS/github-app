@@ -1,30 +1,43 @@
-import { Wrapper } from './style'
-import { Input } from '../Input'
-import { Button } from '../Button'
-import { SwitchToggle } from '../SwitchToggle'
-import { FormEvent, useState } from 'react'
+import style from './Header.module.scss'
 
-interface HeaderProps {
-  onsubmit(value: string): void
-}
-export const Header = ({ onsubmit }: HeaderProps) => {
+import { FormEvent, useEffect, useState } from 'react'
+import { Input } from 'components/Input'
+import { Button } from 'components/Button'
+
+import { motion } from 'framer-motion'
+import { headerVariants } from './variants'
+import { HeaderProps } from './types'
+import { useGetTheme } from 'hooks/useGetTheme'
+import { Toggle } from 'components/Toggle'
+
+export const Header = ({ user, submit }: HeaderProps) => {
+  const theme = useGetTheme()
   const [value, setValue] = useState<string>('')
 
-  const handlerSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handlerSubmit = (event: FormEvent) => {
     event.preventDefault()
-    onsubmit(value)
+    submit(value)
   }
+
+  useEffect(() => {
+    setValue(user)
+  }, [user])
+
   return (
-    <Wrapper>
-      <form onSubmit={(event) => handlerSubmit(event)}>
-        <Input
-          value={value!}
-          onChange={(event) => setValue(event.target.value)}
-          placeholder="Digite o username"
-        />
-        <Button type="submit">Buscar</Button>
+    <motion.header
+      className={style.header}
+      variants={headerVariants}
+      initial="hidden"
+      animate="visible"
+      data-theme={theme}
+    >
+      <form onSubmit={handlerSubmit} className={style.header__form}>
+        <Input value={value} change={setValue} theme={theme} />
+        <div className={style.header__form_actions}>
+          <Button.Header theme={theme} styled={style.minwidth} value={value} />
+          <Toggle />
+        </div>
       </form>
-      <SwitchToggle />
-    </Wrapper>
+    </motion.header>
   )
 }

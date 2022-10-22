@@ -1,20 +1,20 @@
-import { useContext } from 'react'
-import { ToggleContext } from './context/ToggleProvider'
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from './style/GlobalStyle'
-import { Container } from './components/Container'
-import { GitProvider } from 'context/GitProvider'
+import { useGetTheme } from 'hooks/useGetTheme'
+
+import { ApolloProvider } from '@apollo/client'
+import { client } from 'lib/apollo'
+
+import { Container } from 'components/Container'
+import { AnimateRoutes } from 'components/AnimateRoutes'
 
 function App() {
-  const { theme } = useContext(ToggleContext)
+  const theme = useGetTheme()
 
   return (
-    <ThemeProvider theme={theme}>
-      <GitProvider>
-        <GlobalStyle />
-        <Container />
-      </GitProvider>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <Container theme={theme}>
+        <AnimateRoutes />
+      </Container>
+    </ApolloProvider>
   )
 }
 

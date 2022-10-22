@@ -15,11 +15,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "plugins": [{"name": "typescript-plugin-css-modules"}]
   },
   "include": ["src"],
-  "files": [
-    "src/style/styled.d.ts"
-  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

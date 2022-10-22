@@ -29,7 +29,7 @@ export default {
   },
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|css|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|css|less|scss|sss|styl|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/src/test/setup.ts'
   },
   setupFilesAfterEnv: ['<rootDir>/src/test/setup.ts'],
