@@ -5,7 +5,6 @@ import style from './Search.module.scss'
 
 //assets
 import logoImg from '../../assets/img/Logo.svg'
-import { SwitchToggle } from '../SwitchToggle'
 
 //motions
 import { motion } from 'framer-motion'
@@ -47,11 +46,7 @@ export const Search = ({ submit }: SearchProps) => {
       <form onSubmit={handlerSubmit} className={style.search__form}>
         <Input value={value} theme={theme} change={setValue} />
 
-        <div className={style.search__form_actions}>
-          <Button styled={style.minwidth} theme={theme} value={value} />
-
-          <SwitchToggle />
-        </div>
+        <Button.Search theme={theme} value={value} />
       </form>
     </motion.div>
   )
