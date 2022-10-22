@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.0",
-    "@radix-ui/react-switch": "^1.0.0",
     "@reduxjs/toolkit": "^1.8.5",
-    "@stitches/react": "^1.2.8",
     "framer-motion": "^7.4.0",
     "graphql": "^16.6.0",
     "phosphor-react": "^1.4.1",
