@@ -15,22 +15,23 @@ body {
 }
 
 :root {
-    --background-dark: #333;
+    --dark-gray: #333;
+    --border-input: #5C5C5C;
+    --gray-repo: #474747;
     --background-light: #fcfcfc;
     --middle-gray: #717171;
     --light-gray: #E0E0E0;
-    --blue-linear: linear-gradient(135deg, #00418e 0%, #236cf1 100%);
-    --gray-linear: linear-gradient(90deg, #FFFFFF 0%, #C1C1C1 100%);
-    --gray-repo: #474747;
-    --lightgray-repo: var(--light-gray);
-    --scrollbar-gray: var(--middle-gray);
-    --dark-gray: #333;
-    --border-input: #5C5C5C;
-    --inputHeight: 2.5rem;
-    
+    --blue-active: #073079;
     --white: #fcfcfc;
     --black: #000;
     --red: #ee2e31;
+    --blue-linear: linear-gradient(135deg, #00418e 0%, #236cf1 100%);
+    --gray-linear: linear-gradient(90deg, #FFFFFF 0%, #C1C1C1 100%);
+    --background-dark: var(--dark-gray);
+    --lightgray-repo: var(--light-gray);
+    --scrollbar-gray: var(--middle-gray);
+    
+    --inputHeight: 2.5rem;
     --title-fontSize: 2.375rem;
     --title-gap: 0.59rem;
     
