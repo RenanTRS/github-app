@@ -1,0 +1,37 @@
+.toggle {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  
+  &[data-theme="dark"]{
+    color: var(--white);
+
+    &:hover {
+      background: var(--middle-gray);
+      transition: .2s background;
+    }
+    
+    &:focus{
+      outline: 2px solid var(--white);
+    }
+  }
+  &[data-theme="light"]{
+    color: var(--black);
+
+    &:hover {
+      background: var(--light-gray);
+      transition: .2s background;
+    }
+    
+    &:focus{
+      outline: 2px solid var(--black);
+    }
+  }
+}
