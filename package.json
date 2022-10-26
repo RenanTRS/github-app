@@ -12,6 +12,7 @@
   "dependencies": {
     "@apollo/client": "^3.7.0",
     "@reduxjs/toolkit": "^1.8.5",
+    "clsx": "^1.2.1",
     "framer-motion": "^7.4.0",
     "graphql": "^16.6.0",
     "phosphor-react": "^1.4.1",

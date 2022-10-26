@@ -1,11 +1,15 @@
+import clsx from 'clsx'
 import style from './Button.module.scss'
 import { ButtonProps } from './types'
 
-const Search = ({ theme, styled, value }: ButtonProps) => {
+export const Button = ({ theme, value, size = 'sm' }: ButtonProps) => {
   return (
     <button
       type="submit"
-      className={`${style.button} ${style.button__search}`}
+      className={clsx(`${style.button}`, {
+        [`${style.button__search}`]: size === 'lg',
+        [`${style.button__header}`]: size === 'sm'
+      })}
       data-theme={theme}
       disabled={value === ''}
     >
@@ -13,17 +17,3 @@ const Search = ({ theme, styled, value }: ButtonProps) => {
     </button>
   )
 }
-const Header = ({ theme, value }: ButtonProps) => {
-  return (
-    <button
-      type="submit"
-      className={`${style.button} ${style.button__header}`}
-      data-theme={theme}
-      disabled={value === ''}
-    >
-      Buscar
-    </button>
-  )
-}
-
-export const Button = { Search, Header }
