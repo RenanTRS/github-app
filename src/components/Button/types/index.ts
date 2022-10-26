@@ -1,5 +1,7 @@
-export interface ButtonProps {
+import { ButtonHTMLAttributes } from 'react'
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: string
-  styled?: any
   value: string
+  size?: 'sm' | 'lg'
 }

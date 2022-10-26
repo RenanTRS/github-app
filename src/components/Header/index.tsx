@@ -34,7 +34,7 @@ export const Header = ({ user, submit }: HeaderProps) => {
       <form onSubmit={handlerSubmit} className={style.header__form}>
         <Input value={value} change={setValue} theme={theme} />
         <div className={style.header__form_actions}>
-          <Button.Header theme={theme} styled={style.minwidth} value={value} />
+          <Button theme={theme} value={value} />
           <Toggle />
         </div>
       </form>

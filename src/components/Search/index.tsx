@@ -46,7 +46,7 @@ export const Search = ({ submit }: SearchProps) => {
       <form onSubmit={handlerSubmit} className={style.search__form}>
         <Input value={value} theme={theme} change={setValue} />
 
-        <Button.Search theme={theme} value={value} />
+        <Button theme={theme} value={value} size="lg" />
       </form>
     </motion.div>
   )
