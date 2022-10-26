@@ -33,7 +33,9 @@ export const ErrorG = ({ error }: ErrorGProps) => {
       }}
     >
       <div className={style.error__container} data-theme={theme}>
-        <Warning weight="bold" />
+        <div className={style.error__container_img}>
+          <Warning weight="bold" />
+        </div>
 
         {error.networkError ? (
           <span>Erro de conexão</span>

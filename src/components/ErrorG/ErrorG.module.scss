@@ -1,3 +1,5 @@
+@import '../../style/mixins.scss';
+
 .error {
     display: flex;
     justify-content: center;
@@ -7,7 +9,7 @@
     height: calc(100vh - 200px);
     
     &__container {
-        color: var(--red);
+        //color: var(--red);
         font-size: clamp(1rem, 7vw, 1.875rem); //30px max
         height: 120px;
         padding: 1rem;
@@ -20,18 +22,9 @@
         justify-content: center;
         gap: 1rem;
 
-        &[data-theme="dark"]{
-            background: var(--gray-repo);
-            span {
-                color: var(--white);
-            }
+        &_img {
+            color: var(--red);
         }
-        &[data-theme="light"]{
-            background: var(--lightgray-repo);
-            span {
-                color: var(--black);
-            }
-
-        }
+        @include theme(var(--gray-repo), var(--lightgray-repo));
     }
 }

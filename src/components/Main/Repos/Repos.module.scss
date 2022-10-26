@@ -1,5 +1,6 @@
+@import '../../../style/mixins.scss';
+
 .repos {
-    
     @media screen and (min-width: 930px){
         padding: 2rem;
         height: calc(100vh - 160px);
@@ -20,12 +21,7 @@
           }
     }
 
-    &[data-theme="dark"] {
-        color: var(--white);
-    }
-    &[data-theme="light"] {
-        color: var(--black);
-    }
+    @include theme();
     overflow: hidden;
 
     &__list {
@@ -48,12 +44,7 @@
         }
     }
     &__container {
-        &[data-theme="dark"] {
-            background: var(--gray-repo);
-        }
-        &[data-theme="light"] {
-            background: var(--lightgray-repo);
-        }
+        @include theme(var(--gray-repo), var(--lightgray-repo));
 
         width: 260px;
         overflow: hidden;
@@ -68,12 +59,7 @@
         margin-bottom: 0.625rem;
 
         &_name {
-            &[data-theme="dark"] {
-                color: var(--white);
-            }
-            &[data-theme="light"] {
-                color: var(--black);
-            }
+            @include theme();
 
             text-decoration: none;
             font-weight: bold;

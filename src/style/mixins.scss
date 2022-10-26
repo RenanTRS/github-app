@@ -1,0 +1,26 @@
+@mixin theme($dark-theme: null, $light-theme: null){
+  &[data-theme="dark"]{
+    color: var(--white);
+    background: $dark-theme;
+    @content
+  }
+  &[data-theme="light"]{
+    color: var(--black);
+    background: $light-theme;
+    @content
+  }
+};
+
+@mixin theme_dark(){
+  &[data-theme="dark"]{
+    color: var(--white);
+    @content
+  }
+};
+
+@mixin theme_light(){
+  &[data-theme="light"]{
+    color: var(--black);
+    @content
+  }
+}

@@ -1,3 +1,5 @@
+@import '../../style/mixins.scss';
+
 .search {
     display: flex;
     flex-direction: column;
@@ -29,13 +31,15 @@
         &__title {
             font-size: var(--title-fontSize);
             font-weight: bold;
+
+            @include theme();
             
-            &[data-theme="dark"]{
+            /* &[data-theme="dark"]{
                 color: var(--white)
             }
             &[data-theme="light"]{
                 color: var(--black)
-            }
+            } */
         }
     }
 
