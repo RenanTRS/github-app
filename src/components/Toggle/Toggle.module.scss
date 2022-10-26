@@ -1,3 +1,5 @@
+@import '../../style/mixins.scss';
+
 .toggle {
   background: transparent;
   border: none;
@@ -10,9 +12,7 @@
   justify-content: center;
   padding: 2px;
   
-  &[data-theme="dark"]{
-    color: var(--white);
-
+  @include theme_dark(){
     &:hover {
       background: var(--middle-gray);
       transition: .2s background;
@@ -22,9 +22,8 @@
       outline: 2px solid var(--white);
     }
   }
-  &[data-theme="light"]{
-    color: var(--black);
-
+  
+  @include theme_light(){
     &:hover {
       background: var(--light-gray);
       transition: .2s background;

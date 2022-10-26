@@ -1,3 +1,5 @@
+@import '../../style/mixins.scss';
+
 .header {
     position: fixed;
     top: 0;
@@ -21,12 +23,12 @@
         position: absolute;
         height: 76px;
     }
-    
-    &[data-theme="dark"] {
+
+    @include theme_dark(){
         background: var(--background-dark);
         border-bottom: 1px solid var(--middle-gray);
     }
-    &[data-theme="light"] {
+    @include theme_light(){
         background: var(--background-light);
         border-bottom: 1px solid var(--light-gray);
     }

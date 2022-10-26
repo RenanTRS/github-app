@@ -1,3 +1,5 @@
+@import '../../style/mixins.scss';
+
 .container {
     min-height: 100vh;
     width: 100%;
@@ -7,26 +9,11 @@
     justify-content: center;
     align-items: center;
 
-    &[data-theme="dark"] {
-        background: var(--background-dark);
-    }
-    &[data-theme="light"] {
-        background: var(--background-light);
-    }
+    @include theme(var(--background-dark), var(--background-light));
     
     @media screen and (min-width: 1366px){
         display: flex;
         justify-content: center;
         padding: 30px;
     }
-
-    /* &__second {
-        width: 100%;
-        position: relative;
-
-        @media screen and (min-width: 1200px){
-            width: 1200px;
-        }
-    } */
-
 }

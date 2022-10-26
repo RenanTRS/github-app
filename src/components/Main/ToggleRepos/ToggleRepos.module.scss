@@ -1,3 +1,5 @@
+@import '../../../style/mixins.scss';
+
 .toggle {
     display: flex;
     justify-content: center;
@@ -8,14 +10,13 @@
     }
     
     span {
-        &[data-theme="dark"] {
-            color: var(--white);
+        @include theme_dark(){
             border: 1px solid var(--white);
         }
-        &[data-theme="light"] {
-            color: var(--black);
+        @include theme_light(){
             border: 1px solid var(--black);
         }
+
         font-weight: bold;
         text-align: center;
         font-size: 12px;

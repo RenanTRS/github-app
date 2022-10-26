@@ -1,12 +1,9 @@
+@import '../../../style/mixins.scss';
+
 .user {
     font-weight: bold;
 
-    &[data-theme="dark"] {
-        color: var(--white);
-    }
-    &[data-theme="light"] {
-        color: var(--black);
-    }
+    @include theme();
 
     &__data {
         display: flex;
@@ -26,12 +23,7 @@
         }
         &_user {
             text-decoration: none;
-            &[data-theme="dark"] {
-                color: var(--white);
-            }
-            &[data-theme="light"] {
-                color: var(--black);
-            }
+            @include theme();
         }
     }
 
